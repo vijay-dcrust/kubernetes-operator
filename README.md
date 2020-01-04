@@ -24,3 +24,9 @@ kubectl describe genericdaemons genericdaemon-sample
 kubectl label nodes mynode1 daemon=http
 
 kubectl describe genericdaemons genericdaemon-sample
+
+#Cleanup
+
+kubectl delete -f test.yaml
+
+kubectl delete crd genericdaemons.batch.tutorial.kubebuilder.io 

@@ -1,8 +1,14 @@
 # Generic-Daemon-operator
+Easy to deploy any kind of daemon on any node
+
+Demonstrates the kubernetes operator concepts
+
 # Install the operator
 make install
+
 # Run the controller
 make run ENABLE_WEBHOOKS=false
+
 # Apply a test yaml to create GenericDaemon
 
 kubectl apply -f config/samples/mygroup_v1beta1_genericdaemon.yaml

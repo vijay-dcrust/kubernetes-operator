@@ -1,5 +1,4 @@
-# kubernetes-operator
-# Generic-operator
+# Generic-Daemon-operator
 # Install the operator
 make install
 # Run the controller

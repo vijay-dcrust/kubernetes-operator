@@ -11,7 +11,7 @@ make run ENABLE_WEBHOOKS=false
 
 # Apply a test yaml to create GenericDaemon
 
-kubectl apply -f config/samples/mygroup_v1beta1_genericdaemon.yaml
+kubectl apply -f test.yaml
 
 kubectl get genericdaemon
 

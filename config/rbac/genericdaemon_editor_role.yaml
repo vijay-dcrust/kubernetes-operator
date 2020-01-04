@@ -1,0 +1,26 @@
+# permissions to do edit genericdaemons.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: genericdaemon-editor-role
+rules:
+- apiGroups:
+  - batch.tutorial.kubebuilder.io
+  resources:
+  - genericdaemons
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch.tutorial.kubebuilder.io
+  resources:
+  - genericdaemons/status
+  verbs:
+  - get
+  - patch
+  - update

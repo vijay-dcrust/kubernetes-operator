@@ -1,0 +1,70 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.2.4
+  creationTimestamp: null
+  name: genericdaemons.batch.tutorial.kubebuilder.io
+spec:
+  group: batch.tutorial.kubebuilder.io
+  names:
+    kind: GenericDaemon
+    listKind: GenericDaemonList
+    plural: genericdaemons
+    singular: genericdaemon
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      description: GenericDaemon is the Schema for the genericdaemons API
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          description: GenericDaemonSpec defines the desired state of GenericDaemon
+          properties:
+            image:
+              type: string
+            label:
+              description: Foo is an example field of GenericDaemon. Edit GenericDaemon_types.go
+                to remove/update
+              type: string
+          required:
+          - image
+          - label
+          type: object
+        status:
+          description: GenericDaemonStatus defines the observed state of GenericDaemon
+          properties:
+            count:
+              description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                of cluster Important: Run "make" to regenerate code after modifying
+                this file'
+              format: int32
+              type: integer
+          required:
+          - count
+          type: object
+      type: object
+  version: v1
+  versions:
+  - name: v1
+    served: true
+    storage: true
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

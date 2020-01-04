@@ -1,0 +1,7 @@
+apiVersion: batch.tutorial.kubebuilder.io/v1
+kind: GenericDaemon
+metadata:
+  name: genericdaemon-sample
+spec:
+  # Add fields here
+  foo: bar
